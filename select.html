@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+            <th>Employee_No</th><th>Employee_Name</th><th>Employee_Address</th>
+            <th>Department_Name</th>
+            <td>Delete</td></tr>
+            {% for row in data %}
+            <tr>
+                <td>{{row.Empno}}</td>
+                <td>{{row.Empname}}</td>
+                <td>{{row.Address}}</td>
+                <td>{{row.deptno.Deptname}}</td>
+
+                <td><a href="{% url 'deleteurls' row.Empno %}">Remove</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
