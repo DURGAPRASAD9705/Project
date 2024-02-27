@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+    </head>
+    <body>
+        <div id="heading">
+        <h1>Welcome_Vcube</h1>
+        </div>
+        {% block main %}
+        <div id="left"> 
+            <h1>&dagger;&dagger;Vcube@&dagger;&dagger;</h1><br>
+            <p style="color: black;"><b>We can learn many Courses here
+            <br>in Vcube SoftwareSolutions</b></p>
+            
+        </div>
+        <form action="" method="post">
+            {%csrf_token%}
+        <div id="right">
+            <h2 style="color:darkred;"><u>Login_Page</u></h2>
+            <input type="text" name="username" id="" placeholder="User_Name or Email_Id">
+            <input type="text" name="pwd" id="" placeholder="User_Password">
+          <input type="submit" value="Login"><br><br>
+          <a href="{% url 'signupurl' %}">Create_NewAccount</a>
+        </div>
+        </form>
+        {% endblock %}
+    </body>
+</html>
